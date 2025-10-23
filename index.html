@@ -1,53 +1,146 @@
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StudyHub</title>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <title>StudyHub.exe</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+   
+    <div class="sparkles sparkle1">✦</div>
+    <div class="sparkles sparkle2">✦</div>
+    <div class="sparkles sparkle3">✦</div>
+    <div class="sparkles sparkle4">✦</div>
 
-    <header>
-        <h1>Study Hub :)</h1>
-    </header>
+    <div class="container">
+        <!-- Header Window -->
+        <div class="window">
+            <div class="title-bar">
+                <span>STUDYHUB.EXE</span>
+                <div class="title-buttons">
+                    <div class="title-btn">
+                        <div class="minimize-icon"></div>
+                    </div>
+                    <div class="title-btn">○</div>
+                </div>
+            </div>
+            <div class="window-content">
+                <div class="avatar-section">
+                    <div class="avatar-box"> <img src="assets/gatuno.jpeg"> </div>
+                    <div class="speech-bubble">
+                        Olá! Bem-vindo ao StudyHub :D
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <main>
-        <section id="timer">
-            <h2> Timer Pomodoro</h2>
-            <div class="timer-settings">
-                <label> Foco: <input type="number" id="focus-time" value="25" min="1"></label>
-                <label> Pausa: <input type="number" id="break-time" value="5" min="1"></label>
+        <!-- Timer Window -->
+        <div class="window">
+            <div class="title-bar">
+                <span>TIMER POMODORO</span>
+                <div class="title-buttons">
+                    <div class="title-btn">
+                        <div class="minimize-icon"></div>
+                    </div>
+                    <div class="title-btn">○</div>
+                </div>
             </div>
-            <div class="timer-display">25:00</div>
-            <div class="timer-controls">
-                <button>Iniciar</button>
-                <button>Pausar</button>
-                <button>Resetar</button>
-            </div>
-        </section>
+            <div class="window-content">
+                <div class="inner-section">
+                    <div class="section-header">
+                        <span class="section-title">Configurações</span>
+                        <div class="section-icons">
+                            <div class="section-icon"></div>
+                            <div class="section-icon"></div>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <label>
+                            ⏰ Tempo de Foco:
+                            <input type="number" id="focus-time" value="25" min="1">
+                            <span>min</span>
+                        </label>
+                        <label>
+                            ☕ Tempo de Pausa:
+                            <input type="number" id="break-time" value="5" min="1">
+                            <span>min</span>
+                        </label>
+                    </div>
+                </div>
 
-        <section id="sounds">
-            <h2>Sons Ambientes</h2>
-            <div class="sound-buttons">
-                <button>Chuva 🌧️</button>
-                <button>Fogueira 🔥 </button>
-                <button>Café ☕</button>
-                <button>Rádio Lofi 📻</button>
-            </div>
-        </section>
+                <div class="timer-display">25:00</div>
 
-        <section id="todo">
-            <h2>Tarefas</h2>
-            <div id="todo-input">
-                <input type="text" id="taskInput" placeholder="Add nova tarefa">
-                <button id="addTask">Adicionar</button>
+                <div class="button-group">
+                    <button id="startBtn">▶ Iniciar</button>
+                    <button id="pauseBtn">⏸ Pausar</button>
+                    <button id="resetBtn">⟲ Resetar</button>
+                </div>
             </div>
-            <ul id="taskList"></ul>
-        </section>
-    </main>
+        </div>
+
+        <!-- Sounds Window -->
+        <div class="window">
+            <div class="title-bar">
+                <span>SONS AMBIENTES</span>
+                <div class="title-buttons">
+                    <div class="title-btn">
+                        <div class="minimize-icon"></div>
+                    </div>
+                    <div class="title-btn">○</div>
+                </div>
+            </div>
+            <div class="window-content">
+                <div class="sound-grid">
+                    <button class="sound-btn">🌧️ Chuva</button>
+                    <button class="sound-btn">🔥 Fogueira</button>
+                    <button class="sound-btn">☕ Café</button>
+                    <button class="sound-btn">📻 Lofi Radio</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Todo Window -->
+        <div class="window">
+            <div class="title-bar">
+                <span>LISTA DE TAREFAS</span>
+                <div class="title-buttons">
+                    <div class="title-btn">
+                        <div class="minimize-icon"></div>
+                    </div>
+                    <div class="title-btn">○</div>
+                </div>
+            </div>
+            <div class="window-content">
+                <div class="inner-section">
+                    <div class="section-header">
+                        <span class="section-title">Nova Tarefa</span>
+                        <div class="section-icons">
+                            <div class="section-icon"></div>
+                            <div class="section-icon"></div>
+                        </div>
+                    </div>
+                    <div class="input-row">
+                        <input type="text" id="taskInput" placeholder="Digite sua tarefa aqui...">
+                        <button id="addTask">+ Adicionar</button>
+                    </div>
+                </div>
+
+                <div class="inner-section">
+                    <div class="section-header">
+                        <span class="section-title">Minhas Tarefas</span>
+                        <div class="section-icons">
+                            <div class="section-icon"></div>
+                            <div class="section-icon"></div>
+                        </div>
+                    </div>
+                    <ul id="taskList"></ul>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="script.js"></script>
-    </body>
+</body>
 </html>
