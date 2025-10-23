@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StudyHub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <h1>Study Hub :)</h1>
+    </header>
+
+    <main>
+        <section id="timer">
+            <h2> Timer Pomodoro</h2>
+            <div class="timer-settings">
+                <label> Foco: <input type="number" id="focus-time" value="25" min="1"></label>
+                <label> Pausa: <input type="number" id="break-time" value="5" min="1"></label>
+            </div>
+            <div class="timer-display">25:00</div>
+            <div class="timer-controls">
+                <button>Iniciar</button>
+                <button>Pausar</button>
+                <button>Resetar</button>
+            </div>
+        </section>
+
+        <section id="sounds">
+            <h2>Sons Ambientes</h2>
+            <div class="sound-buttons">
+                <button>Chuva 🌧️</button>
+                <button>Fogueira 🔥 </button>
+                <button>Café ☕</button>
+                <button>Rádio Lofi 📻</button>
+            </div>
+        </section>
+
+        <section id="todo">
+            <h2>Tarefas</h2>
+            <div id="todo-input">
+                <input type="text" id="taskInput" placeholder="Add nova tarefa">
+                <button id="addTask">Adicionar</button>
+            </div>
+            <ul id="taskList"></ul>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    </body>
+</html>
