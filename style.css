@@ -274,6 +274,13 @@ button:active {
     font-size: 11px;
 }
 
+.sound-btn.active {
+  background: #ffcc66;
+  color: #222;
+  box-shadow: 0 0 8px #ffcc66;
+  transform: scale(1.05);
+}
+
 #taskList {
     list-style: none;
     max-height: 250px;
@@ -368,3 +375,4 @@ button:active {
         align-items: stretch;
     }
 }
+
