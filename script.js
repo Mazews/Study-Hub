@@ -82,61 +82,74 @@ resetBtn.addEventListener('click', resetTimer);
 
 updateDisplay();
 
-// Todo List
+// === Lista de Tarefas ===
 const taskInput = document.getElementById('taskInput');
 const addTaskBtn = document.getElementById('addTask');
 const taskList = document.getElementById('taskList');
 
-let tasks = [];
+// Carregar tarefas salvas no localStorage
+let tasks = JSON.parse(localStorage.getItem('tasks')) || [];
+
+function saveTasks() {
+  localStorage.setItem('tasks', JSON.stringify(tasks));
+}
 
 function renderTasks() {
-    taskList.innerHTML = '';
-    
-    if (tasks.length === 0) {
-        taskList.innerHTML = '<li style="text-align: center; opacity: 0.5; cursor: default; border-style: dashed;">Nenhuma tarefa ainda...</li>';
-        return;
-    }
+  taskList.innerHTML = '';
 
-    tasks.forEach((task, index) => {
-        const li = document.createElement('li');
-        li.textContent = task.text;
+  if (tasks.length === 0) {
+    taskList.innerHTML =
+      '<li style="text-align: center; opacity: 0.5; cursor: default; border-style: dashed;">Nenhuma tarefa aqui</li>';
+    return;
+  }
 
-        if (task.completed) li.classList.add('completed');
+  tasks.forEach((task, index) => {
+    const li = document.createElement('li');
+    li.textContent = task.text;
 
-        li.addEventListener('click', () => {
-            tasks[index].completed = !tasks[index].completed;
-            renderTasks();
-        });
+    if (task.completed) li.classList.add('completed');
 
-        const deleteBtn = document.createElement('button');
-        deleteBtn.textContent = '✖';
-        deleteBtn.className = 'delete-btn';
-        deleteBtn.addEventListener('click', (e) => {
-            e.stopPropagation();
-            tasks.splice(index, 1);
-            renderTasks();
-        });
-
-        li.appendChild(deleteBtn);
-        taskList.appendChild(li);
+    // Marcar como concluída
+    li.addEventListener('click', () => {
+      tasks[index].completed = !tasks[index].completed;
+      saveTasks();
+      renderTasks();
     });
+
+    // Botão de apagar
+    const deleteBtn = document.createElement('button');
+    deleteBtn.textContent = '✖';
+    deleteBtn.className = 'delete-btn';
+    deleteBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      tasks.splice(index, 1);
+      saveTasks();
+      renderTasks();
+    });
+
+    li.appendChild(deleteBtn);
+    taskList.appendChild(li);
+  });
 }
 
 function addTask() {
-    const text = taskInput.value.trim();
-    if (text !== '') {
-        tasks.push({ text, completed: false });
-        taskInput.value = '';
-        renderTasks();
-    }
+  const text = taskInput.value.trim();
+  if (text !== '') {
+    tasks.push({ text, completed: false });
+    taskInput.value = '';
+    saveTasks();
+    renderTasks();
+  }
 }
 
 addTaskBtn.addEventListener('click', addTask);
 taskInput.addEventListener('keypress', (e) => {
-    if (e.key === 'Enter') addTask();
+  if (e.key === 'Enter') addTask();
 });
 
+// inicializar lista
 renderTasks();
+
 
 // Sons ambiente
 document.querySelectorAll('.sound-btn').forEach(btn => {
