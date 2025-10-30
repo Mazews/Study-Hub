@@ -1,4 +1,10 @@
+/* ============================================================================
+   STUDYHUB - ESTILO PRINCIPAL
+   ============================================================================ */
 
+/* ----------------------------------------------------------------------------
+   RESET E CONFIGURAÇÕES GLOBAIS
+   ---------------------------------------------------------------------------- */
 
 * {
     margin: 0;
@@ -15,19 +21,20 @@ body {
     overflow-x: hidden;
 }
 
-.avatar-box img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 6px;
-}
+/* ----------------------------------------------------------------------------
+   CONTAINER PRINCIPAL
+   ---------------------------------------------------------------------------- */
 
 .container {
     max-width: 750px;
     margin: 0 auto;
     position: relative;
-    z-index: 1;
+    z-index: 100; /* Garante que fique acima dos elementos decorativos */
 }
+
+/* ----------------------------------------------------------------------------
+   JANELAS (WINDOWS)
+   ---------------------------------------------------------------------------- */
 
 .window {
     background: rgba(232, 244, 248, 0.2);
@@ -37,6 +44,7 @@ body {
     overflow: hidden;
 }
 
+/* Barra de título das janelas */
 .title-bar {
     background: rgba(232, 244, 248, 0.6);
     padding: 8px 12px;
@@ -54,6 +62,7 @@ body {
     letter-spacing: 0.5px;
 }
 
+/* Botões da barra de título (minimizar/fechar) */
 .title-buttons {
     display: flex;
     gap: 4px;
@@ -83,72 +92,15 @@ body {
     margin-top: 3px;
 }
 
+/* Conteúdo das janelas */
 .window-content {
     padding: 20px;
     background: rgba(232, 244, 248, 0.2);
 }
 
-/* Header com avatar */
-.avatar-section {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 0;
-}
-
-.avatar-box {
-    min-width: 120px;
-    width: 200px;
-    height: 200px;
-    border: 2px solid #000;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.avatar-title {
-    font-size: 11px;
-    font-weight: bold;
-    margin-bottom: 8px;
-    color: #000;
-}
-
-.speech-bubble {
-    flex: 1;
-    background: white;
-    padding: 15px;
-    border: 2px solid #000;
-    border-radius: 15px;
-    position: relative;
-    font-size: 13px;
-    color: #000;
-    line-height: 1.5;
-}
-
-.speech-bubble::before {
-    content: '';
-    position: absolute;
-    left: -10px;
-    top: 30px;
-    width: 0;
-    height: 0;
-    border-top: 10px solid transparent;
-    border-bottom: 10px solid transparent;
-    border-right: 10px solid #000;
-}
-
-.speech-bubble::after {
-    content: '';
-    position: absolute;
-    left: -7px;
-    top: 32px;
-    width: 0;
-    height: 0;
-    border-top: 8px solid transparent;
-    border-bottom: 8px solid transparent;
-    border-right: 8px solid white;
-}
+/* ----------------------------------------------------------------------------
+   SEÇÕES INTERNAS (INNER SECTIONS)
+   ---------------------------------------------------------------------------- */
 
 .inner-section {
     background: rgba(255, 255, 255, 0.5);
@@ -162,6 +114,7 @@ body {
     margin-bottom: 0;
 }
 
+/* Cabeçalhos das seções */
 .section-header {
     display: flex;
     justify-content: space-between;
@@ -189,6 +142,85 @@ body {
     border-radius: 50%;
 }
 
+/* ----------------------------------------------------------------------------
+   HEADER - AVATAR E BALÃO DE FALA
+   ---------------------------------------------------------------------------- */
+
+.avatar-section {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 0;
+}
+
+.avatar-box {
+    min-width: 120px;
+    width: 200px;
+    height: 200px;
+    border: 2px solid #000;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.avatar-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.avatar-title {
+    font-size: 11px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #000;
+}
+
+/* Balão de fala */
+.speech-bubble {
+    flex: 1;
+    background: white;
+    padding: 15px;
+    border: 2px solid #000;
+    border-radius: 15px;
+    position: relative;
+    font-size: 13px;
+    color: #000;
+    line-height: 1.5;
+}
+
+/* Pontinha do balão de fala */
+.speech-bubble::before {
+    content: '';
+    position: absolute;
+    left: -10px;
+    top: 30px;
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+    border-right: 10px solid #000;
+}
+
+.speech-bubble::after {
+    content: '';
+    position: absolute;
+    left: -7px;
+    top: 32px;
+    width: 0;
+    height: 0;
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent;
+    border-right: 8px solid white;
+}
+
+/* ----------------------------------------------------------------------------
+   TIMER POMODORO
+   ---------------------------------------------------------------------------- */
+
+/* Display do timer */
 .timer-display {
     font-size: 48px;
     font-weight: bold;
@@ -198,6 +230,48 @@ body {
     letter-spacing: 4px;
     font-family: 'Courier New', monospace;
 }
+
+/* Botões de modo (Foco/Pausa) */
+.mode-buttons {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 0;
+}
+
+.mode-btn {
+    flex: 1;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.7);
+    border: 2px solid #000;
+    border-radius: 6px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #000;
+    position: relative;
+    z-index: 1;
+    pointer-events: auto;
+}
+
+.mode-btn:hover {
+    background: rgba(240, 240, 240, 0.8);
+    transform: translateY(-2px);
+}
+
+.mode-btn.active-mode {
+    background: #ffd700;
+    border-color: #ff8c00;
+    color: #8b4513;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+    transform: scale(1.05);
+    z-index: 2;
+}
+
+/* ----------------------------------------------------------------------------
+   INPUTS E FORMULÁRIOS
+   ---------------------------------------------------------------------------- */
 
 .input-row {
     display: flex;
@@ -215,7 +289,8 @@ body {
     flex: 1;
 }
 
-input[type="number"], input[type="text"] {
+input[type="number"], 
+input[type="text"] {
     background: rgba(255, 255, 255, 0.5);
     border: 2px solid #000;
     border-radius: 4px;
@@ -234,11 +309,17 @@ input[type="text"] {
     flex: 1;
 }
 
+/* ----------------------------------------------------------------------------
+   BOTÕES
+   ---------------------------------------------------------------------------- */
+
 .button-group {
     display: flex;
     gap: 10px;
     justify-content: center;
     flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
 }
 
 button {
@@ -252,6 +333,9 @@ button {
     cursor: pointer;
     transition: all 0.1s;
     color: #000;
+    position: relative;
+    z-index: 1;
+    pointer-events: auto;
 }
 
 button:hover {
@@ -263,23 +347,139 @@ button:active {
     transform: translateY(0);
 }
 
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+/* ----------------------------------------------------------------------------
+   SONS AMBIENTE
+   ---------------------------------------------------------------------------- */
+
 .sound-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.sound-control {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.6);
+    border: 2px solid #000;
+    border-radius: 8px;
+    padding: 10px 15px;
+    gap: 15px;
+    transition: all 0.2s;
+}
+
+.sound-control:hover {
+    background: rgba(255, 255, 255, 0.8);
+    transform: translateX(3px);
 }
 
 .sound-btn {
-    padding: 15px 10px;
-    font-size: 11px;
+    flex: 1;
+    text-align: left;
+    padding: 8px 15px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid #000;
+    border-radius: 6px;
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+    color: #000;
+}
+
+.sound-btn:hover {
+    background: #f0f0f0;
+    transform: scale(1.02);
 }
 
 .sound-btn.active {
-  background: #ffcc66;
-  color: #222;
-  box-shadow: 0 0 8px #ffcc66;
-  transform: scale(1.05);
+    background: #90ee90;
+    border-color: #006400;
+    color: #006400;
+    box-shadow: 0 0 10px rgba(144, 238, 144, 0.5);
+    animation: pulse 2s infinite;
 }
+
+@keyframes pulse {
+    0%, 100% { box-shadow: 0 0 10px rgba(144, 238, 144, 0.5); }
+    50% { box-shadow: 0 0 20px rgba(144, 238, 144, 0.8); }
+}
+
+/* Sliders de volume */
+.volume-slider {
+    width: 120px;
+    height: 6px;
+    cursor: pointer;
+    -webkit-appearance: none;
+    appearance: none;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 3px;
+    outline: none;
+}
+
+.volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    background: #000;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.volume-slider::-webkit-slider-thumb:hover {
+    background: #333;
+    transform: scale(1.2);
+}
+
+.volume-slider::-moz-range-thumb {
+    width: 16px;
+    height: 16px;
+    background: #000;
+    border: 2px solid #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.volume-slider::-moz-range-thumb:hover {
+    background: #333;
+    transform: scale(1.2);
+}
+
+/* Controles globais de som */
+.global-sound-controls {
+    margin-top: 15px;
+    text-align: center;
+    padding-top: 15px;
+    border-top: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+#pauseAll {
+    background: rgba(255, 100, 100, 0.8);
+    border: 2px solid #8b0000;
+    color: #8b0000;
+    padding: 10px 25px;
+    font-weight: bold;
+}
+
+#pauseAll:hover {
+    background: rgba(255, 80, 80, 0.9);
+    transform: translateY(-2px);
+}
+
+/* ----------------------------------------------------------------------------
+   LISTA DE TAREFAS
+   ---------------------------------------------------------------------------- */
 
 #taskList {
     list-style: none;
@@ -318,19 +518,42 @@ button:active {
     font-weight: bold;
 }
 
+/* ----------------------------------------------------------------------------
+   ELEMENTOS DECORATIVOS (ESTRELAS)
+   ---------------------------------------------------------------------------- */
+
 .sparkles {
     position: fixed;
     font-size: 24px;
-    pointer-events: none;
+    pointer-events: none; /* Não bloqueia cliques */
     z-index: 10;
     color: white;
     text-shadow: 0 0 10px rgba(255,255,255,0.8);
 }
 
-.sparkle1 { top: 15%; left: 8%; animation: twinkle 30s infinite; }
-.sparkle2 { top: 25%; right: 10%; animation: twinkle 28.5s infinite 0.5s; }
-.sparkle3 { bottom: 20%; left: 15%; animation: twinkle 32s infinite 1s; }
-.sparkle4 { bottom: 30%; right: 12%; animation: twinkle 33.2s infinite 1.5s; }
+.sparkle1 { 
+    top: 15%; 
+    left: 8%; 
+    animation: twinkle 30s infinite; 
+}
+
+.sparkle2 { 
+    top: 25%; 
+    right: 10%; 
+    animation: twinkle 28.5s infinite 0.5s; 
+}
+
+.sparkle3 { 
+    bottom: 20%; 
+    left: 15%; 
+    animation: twinkle 32s infinite 1s; 
+}
+
+.sparkle4 { 
+    bottom: 30%; 
+    right: 12%; 
+    animation: twinkle 33.2s infinite 1.5s; 
+}
 
 @keyframes twinkle {
     0% { 
@@ -349,11 +572,31 @@ button:active {
     }
 }
 
+/* ----------------------------------------------------------------------------
+   RESPONSIVIDADE - MOBILE
+   ---------------------------------------------------------------------------- */
+
 @media (max-width: 600px) {
+    /* Sons ambiente em mobile */
+    .sound-control {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+    }
+    
+    .sound-btn {
+        text-align: center;
+    }
+    
+    .volume-slider {
+        width: 100%;
+    }
+
     .sound-grid {
         grid-template-columns: 1fr;
     }
     
+    /* Avatar em mobile */
     .avatar-section {
         flex-direction: column;
         text-align: center;
@@ -365,14 +608,15 @@ button:active {
         font-size: 40px;
     }
     
+    /* Esconder pontinha do balão em mobile */
     .speech-bubble::before,
     .speech-bubble::after {
         display: none;
     }
 
+    /* Inputs em coluna em mobile */
     .input-row {
         flex-direction: column;
         align-items: stretch;
     }
 }
-

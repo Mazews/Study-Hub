@@ -50,6 +50,20 @@
             <div class="window-content">
                 <div class="inner-section">
                     <div class="section-header">
+                        <span class="section-title">Modo</span>
+                        <div class="section-icons">
+                            <div class="section-icon"></div>
+                            <div class="section-icon"></div>
+                        </div>
+                    </div>
+                    <div class="mode-buttons">
+                        <button id="focusModeBtn" class="mode-btn active-mode">🎯 Foco</button>
+                        <button id="breakModeBtn" class="mode-btn">☕ Pausa</button>
+                    </div>
+                </div>
+
+                <div class="inner-section">
+                    <div class="section-header">
                         <span class="section-title">Configurações</span>
                         <div class="section-icons">
                             <div class="section-icon"></div>
@@ -83,7 +97,7 @@
         <!-- SONS AMBIENTE -->
         <div class="window">
             <div class="title-bar">
-                <span>SONS AMBIENTE</span>
+                <span>🌲 SONS AMBIENTE</span>
                 <div class="title-buttons">
                     <div class="title-btn">
                         <div class="minimize-icon"></div>
@@ -93,12 +107,36 @@
             </div>
             <div class="window-content">
                 <div class="sound-grid">
-                    <button class="sound-btn">🌧️ Chuva</button>
-                    <button class="sound-btn">⛈️ Tempestade</button>
-                    <button class="sound-btn">💨 Vento</button>
-                    <button class="sound-btn">🔥 Fogueira</button>
-                    <button class="sound-btn">🐦‍⬛ Pássaros</button>
-                    <button class="sound-btn">📻 Lofi Radio</button>
+                    
+                    <div class="sound-control">
+                        <button class="sound-btn" data-sound="Chuva">🌧️ Chuva</button>
+                        <input type="range" class="volume-slider" data-sound="rain" min="0" max="1" step="0.05" value="0.5" />
+                    </div>
+
+                    <div class="sound-control">
+                        <button class="sound-btn" data-sound="Fogueira">🔥 Fogueira</button>
+                        <input type="range" class="volume-slider" data-sound="fire" min="0" max="1" step="0.05" value="0.5" />
+                    </div>
+
+                    <div class="sound-control">
+                        <button class="sound-btn" data-sound="Vento">💨 Vento</button>
+                        <input type="range" class="volume-slider" data-sound="cafe" min="0" max="1" step="0.05" value="0.5" />
+                    </div>
+
+                    <div class="sound-control">
+                        <button class="sound-btn" data-sound="Passaros">🦅 Pássaros</button>
+                        <input type="range" class="volume-slider" data-sound="birds" min="0" max="1" step="0.05" value="0.5" />
+                    </div>
+
+                    <div class="sound-control">
+                        <button class="sound-btn" data-sound="Lofi">📻 Lofi Radio</button>
+                        <input type="range" class="volume-slider" data-sound="lofi" min="0" max="1" step="0.05" value="0.5" />
+                    </div>
+
+                </div>
+
+                <div class="global-sound-controls">
+                    <button id="pauseAll">⏸️ Pausar Todos</button>
                 </div>
             </div>
         </div>
