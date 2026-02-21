@@ -75,12 +75,12 @@
 
         if (isFocusTime) {
           sessions++;
-          alert(`☕ Pausa! Você completou ${sessions} sessão(ões) de foco.`);
+          alert(` Pausinha! Você completou ${sessions} sessão(ões) de foco.`);
           // Não inicia automaticamente - usuário precisa clicar
           isFocusTime = false;
           timeLeft = parseInt(breakInput.value) * 60;
         } else {
-          alert('💪 Hora de focar novamente!');
+          alert(' Hora de focar de novo!');
           isFocusTime = true;
           timeLeft = parseInt(focusInput.value) * 60;
         }
